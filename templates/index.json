@@ -1,1 +1,610 @@
-{"sections":{"slideshow_6PxQxi":{"type":"slideshow","blocks":{"slide_DiT4VK":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/nh_ch_p_man_hinh_2026-05-09_120129.png","heading":"Luxe Solitaire Ring","subheading":"Tell your brand's story through images","button_label":"Shop Now","link":"shopify:\/\/products\/huitan-wedding-band-eternity-rings-women-brilliant-round-zirconia-luxury-engagement-rings-thin-elegant-female-jewelry-drop-ship"}}},"block_order":["slide_DiT4VK"],"name":"t:sections.slideshow.presets.name","settings":{"slide_height":"adapt_image","desktop_image_fit":"contain","mobile_image_fit":"contain","change_slides_speed":5,"text_color":"#ffffff","enable_text_shadow":true,"heading_font":"system_ui_n4","subheading_font":"system_ui_n4","button_font":"system_ui_n4","heading_size":39,"mobile_heading_size":26,"heading_weight":"700","heading_spacing":0,"mobile_heading_spacing":0,"heading_bottom":8,"mobile_heading_bottom":6,"subheading_size":18,"mobile_subheading_size":14,"subheading_weight":"400","subheading_spacing":0,"mobile_subheading_spacing":0,"button_size":14,"mobile_button_size":12,"button_weight":"700","button_spacing":0.5,"mobile_button_spacing":0.5,"button_top":10,"mobile_button_top":8,"button_underline_offset":5,"desktop_content_bottom":30,"mobile_content_bottom":24}},"custom_collection_list_responsive_iPHBeE":{"type":"custom-collection-list-responsive","blocks":{"collection_tA84NK":{"type":"collection","settings":{"collection":"classic-case","link":"","title":"","mobile_title":""}},"collection_y8TqGc":{"type":"collection","settings":{"collection":"bracelets","link":"","title":"","mobile_title":""}},"collection_i3cWGU":{"type":"collection","settings":{"collection":"earrings","link":"","title":"","mobile_title":""}},"collection_gzmUV9":{"type":"collection","settings":{"collection":"frontpage","link":"","title":"","mobile_title":""}},"collection_VKcCk7":{"type":"collection","settings":{"collection":"new-in","link":"","title":"","mobile_title":""}},"collection_V6DMLq":{"type":"collection","settings":{"collection":"bestsellers","link":"","title":"","mobile_title":""}}},"block_order":["collection_tA84NK","collection_y8TqGc","collection_i3cWGU","collection_gzmUV9","collection_VKcCk7","collection_V6DMLq"],"name":"Custom collection list","settings":{"title_font":"system_ui_n4","title_letter_spacing":0,"title_transform":"none","heading":"","card_background":"#f7f7f7","title_color":"#121212","title_weight":"500","image_fit":"cover","desktop_ratio":"3 \/ 4","mobile_ratio":"7 \/ 8","desktop_gap":16,"mobile_gap":0,"desktop_title_size":17,"mobile_title_size":13,"mobile_title_top":14,"mobile_card_width":58,"mobile_side_scale":0.8,"mobile_side_opacity":65,"mobile_arrow_size":34,"mobile_arrow_side":12,"mobile_arrow_bg":"#ffffff","mobile_arrow_color":"#071743","padding_top":60,"padding_bottom":60,"padding_top_mobile":48,"padding_bottom_mobile":36}},"custom_split_banner_eaWqkW":{"type":"custom-split-banner","name":"Custom split banner","settings":{"image_position":"left","eyebrow":"CÁC DỊP LỄ RƯỚC LỄ LẦN ĐẦU","heading":"CHO MỘT CỘT MỐC Ý NGHĨA","button_label":"MUA SẮM BỘ SƯU TẬP","button_link":"","background_color":"#ffffff","content_background":"#f7f7f7","text_color":"#071743","desktop_height":960,"mobile_height":640,"desktop_image_position":"center center","mobile_image_position":"center center","mobile_vertical_position":"flex-end","content_width":520,"eyebrow_size":22,"mobile_eyebrow_size":11,"eyebrow_weight":"600","eyebrow_letter_spacing":1,"eyebrow_bottom":24,"mobile_eyebrow_bottom":6,"heading_size":30,"mobile_heading_size":12,"heading_weight":"400","heading_letter_spacing":1,"button_top":30,"mobile_button_top":12,"button_width":230,"mobile_button_width":120,"button_height":52,"mobile_button_height":28,"button_size":14,"mobile_button_size":8,"button_bg":"#071743","button_color":"#ffffff","padding_top":0,"padding_bottom":0,"padding_top_mobile":0,"padding_bottom_mobile":0}},"custom_featured_collection_hover_slider_fRXjrm":{"type":"custom-featured-collection-hover-slider","name":"Featured collection hover","settings":{"show_badge":false,"section_width":1900,"collection":"jewelry-example-products","product_limit":10,"heading":"Best Sellers","heading_font":"serif","heading_size":28,"mobile_heading_size":22,"heading_weight":"400","heading_color":"#000000","button_label":"SHOP NOW","button_link":"","button_size":11,"mobile_button_size":10,"button_color":"#000000","image_ratio":"3\/ 4","mobile_image_ratio":"1 \/ 1","image_fit":"cover","section_bg":"#ffffff","card_bg":"#ffffff","show_vendor":true,"show_price":true,"show_heart":true,"show_dots":false,"show_quick_add":false,"quick_add_text":"Add to bag","badge_text":"Celeb Pick","badge_bg":"#ffffff","badge_color":"#ff4b2b","badge_size":13,"badge_top":8,"badge_left":8,"heart_color":"#ff6b3a","heart_size":28,"heart_top":8,"heart_right":10,"text_align":"center","vendor_size":11,"mobile_vendor_size":10,"title_size":13,"mobile_title_size":14,"title_color":"#000000","price_size":12,"mobile_price_size":14,"price_color":"#000000","info_top":14,"quick_add_height":34,"mobile_quick_add_height":32,"quick_add_size":14,"mobile_quick_add_size":14,"quick_add_bg":"#ffffff","quick_add_color":"#000000","quick_add_border":"#cccccc","product_gap":14,"mobile_product_gap":6,"side_padding":60,"mobile_side_padding":16,"header_bottom":40,"mobile_header_bottom":24,"arrow_size":34,"arrow_side":45,"arrow_bg":"#b7b0bb","arrow_color":"#ffffff","padding_top":48,"padding_bottom":56,"padding_top_mobile":28,"padding_bottom_mobile":32}},"custom_banner_products_grid_7nYRQE":{"type":"custom-banner-products-grid","disabled":true,"name":"Banner + 4 products","settings":{"collection":"jewelry-example-products","banner_title":"Custom Your Jewelry","banner_position":"left","banner_title_color":"#000000","banner_title_size":40,"mobile_banner_title_size":28,"desktop_height":760,"mobile_banner_height":420,"product_bg":"#f7f7f7","product_ratio":"1 \/ 1","gap":16,"product_gap":12,"mobile_gap":14,"mobile_product_gap":6,"padding_top":0,"padding_bottom":0,"padding_top_mobile":0,"padding_bottom_mobile":0}},"custom_featured_collection_hover_slider_URzkER":{"type":"custom-featured-collection-hover-slider","name":"Featured collection hover","settings":{"show_badge":true,"section_width":1900,"collection":"bracelets","product_limit":10,"heading":"New Arrives","heading_font":"serif","heading_size":28,"mobile_heading_size":22,"heading_weight":"400","heading_color":"#000000","button_label":"SHOP NOW","button_link":"","button_size":11,"mobile_button_size":10,"button_color":"#000000","image_ratio":"3\/ 4","mobile_image_ratio":"1 \/ 1","image_fit":"cover","section_bg":"#ffffff","card_bg":"#ffffff","show_vendor":true,"show_price":true,"show_heart":false,"show_dots":false,"show_quick_add":false,"quick_add_text":"Add to bag","badge_text":"New","badge_bg":"#cccccc","badge_color":"#ff4b2b","badge_size":13,"badge_top":8,"badge_left":8,"heart_color":"#ff6b3a","heart_size":28,"heart_top":8,"heart_right":10,"text_align":"center","vendor_size":11,"mobile_vendor_size":10,"title_size":13,"mobile_title_size":14,"title_color":"#000000","price_size":12,"mobile_price_size":14,"price_color":"#000000","info_top":14,"quick_add_height":34,"mobile_quick_add_height":32,"quick_add_size":14,"mobile_quick_add_size":14,"quick_add_bg":"#ffffff","quick_add_color":"#000000","quick_add_border":"#cccccc","product_gap":14,"mobile_product_gap":6,"side_padding":60,"mobile_side_padding":16,"header_bottom":40,"mobile_header_bottom":24,"arrow_size":34,"arrow_side":45,"arrow_bg":"#b7b0bb","arrow_color":"#ffffff","padding_top":48,"padding_bottom":56,"padding_top_mobile":28,"padding_bottom_mobile":32}},"ssevice_icon_rPGBKR":{"type":"ssevice-icon","blocks":{"service_Nf9VXr":{"type":"service","settings":{"icon_text":"🚚","title":"FREE SHIPPING","text":""}},"service_jTphFY":{"type":"service","settings":{"icon_text":"⏱️","title":"FAST DELIVERY","text":""}},"service_Bx7nCc":{"type":"service","settings":{"icon_text":"📦","title":"15-DAY RETURNS","text":""}},"service_Ge9CNw":{"type":"service","settings":{"icon_text":"🎧","title":"24\/7 SUPPORT","text":""}}},"block_order":["service_Nf9VXr","service_jTphFY","service_Bx7nCc","service_Ge9CNw"],"disabled":true,"name":"Service icons","settings":{"bg_color":"#ffffff","max_width":1500,"desktop_side_spacing":80,"padding_top":36,"padding_bottom":36,"mobile_padding_top":28,"mobile_padding_bottom":28,"mobile_side_spacing":18,"columns_desktop":4,"columns_mobile":2,"desktop_gap":52,"mobile_row_gap":28,"mobile_column_gap":20,"desktop_align":"center","desktop_icon_gap":18,"mobile_icon_gap":8,"icon_size_desktop":42,"icon_size_mobile":34,"icon_color":"#e85f7a","title_size_desktop":15,"title_size_mobile":12,"title_weight":800,"title_letter_spacing":0.3,"title_color":"#222222","text_size_desktop":13,"text_size_mobile":10,"text_weight":400,"text_line_height":1.5,"text_top_spacing":6,"mobile_text_top_spacing":4,"text_color":"#444444"}},"custom_info_card_slider_J4Yht6":{"type":"custom-info-card-slider","blocks":{"card_EfQFg3":{"type":"card","settings":{"title":"MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ","text":"<p>Rosy Auras is a pioneering online jewelry retailer.<\/p>"}},"card_Kz6qNz":{"type":"card","settings":{"title":"MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ","text":"<p>Rosy Auras is a pioneering online jewelry retailer.<\/p>"}},"card_8hQe4a":{"type":"card","settings":{"title":"MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ","text":"<p>Rosy Auras is a pioneering online jewelry retailer.<\/p>"}},"card_mDpB6m":{"type":"card","settings":{"title":"MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ","text":"<p>Rosy Auras is a pioneering online jewelry retailer.<\/p>"}}},"block_order":["card_EfQFg3","card_Kz6qNz","card_8hQe4a","card_mDpB6m"],"name":"Custom info card slider","settings":{"heading":"ONLY AT ROSY AURAS","heading_font":"system_ui_n4","card_title_font":"system_ui_n4","body_font":"system_ui_n4","section_width":1920,"desktop_columns":4,"mobile_card_width":65,"mobile_side_scale":0.9,"mobile_side_opacity":65,"image_ratio":"4 \/ 5","mobile_image_ratio":"4 \/ 5","image_fit":"cover","section_bg":"#ffffff","image_bg":"#f7f7f7","side_padding":16,"card_gap":14,"mobile_card_gap":0,"hover_zoom":1.1,"desktop_heading_padding":34,"desktop_heading_top":12,"desktop_heading_image_gap":28,"mobile_heading_padding":15,"mobile_heading_top":8,"mobile_heading_image_gap":28,"heading_size":24,"mobile_heading_size":10,"heading_weight":"400","heading_spacing":0.5,"heading_color":"#071743","text_top":24,"mobile_text_top":12,"text_align":"center","title_size":18,"mobile_title_size":10,"title_weight":"500","title_spacing":1,"title_color":"#071743","title_bottom":12,"body_size":15,"mobile_body_size":8,"body_line_height":1.6,"body_color":"#071743","arrow_size":38,"mobile_arrow_size":28,"arrow_side":28,"arrow_bg":"#ffffff","arrow_color":"#071743","padding_top":48,"padding_bottom":48,"padding_top_mobile":20,"padding_bottom_mobile":24}},"custom_jewelry_grid_88mRry":{"type":"custom-jewelry-grid","blocks":{"category_yydpqr":{"type":"category","settings":{"title":"Necklace","link":"shopify:\/\/products\/custom-day-chuyền"}},"category_pVtTb4":{"type":"category","settings":{"title":"Ring","link":""}},"category_9z8xPY":{"type":"category","settings":{"title":"Earrings","link":""}},"category_V8RWk7":{"type":"category","settings":{"title":"Bracelet","link":""}}},"block_order":["category_yydpqr","category_pVtTb4","category_9z8xPY","category_V8RWk7"],"name":"Custom Jewelry Grid","settings":{"full_width":true,"banner_title":"Custom Your Jewelry","banner_title_font_size":3.2,"banner_title_color":"#ffffff","category_font_size":1.4,"category_title_color":"#000000","grid_gap_desktop":0,"grid_gap_mobile":0,"padding_top":36,"padding_bottom":36}}},"order":["slideshow_6PxQxi","custom_collection_list_responsive_iPHBeE","custom_split_banner_eaWqkW","custom_featured_collection_hover_slider_fRXjrm","custom_banner_products_grid_7nYRQE","custom_featured_collection_hover_slider_URzkER","ssevice_icon_rPGBKR","custom_info_card_slider_J4Yht6","custom_jewelry_grid_88mRry"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_6PxQxi": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_DiT4VK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/aa.png",
+            "heading": "Luxe Solitaire Ring",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Shop Now",
+            "link": "shopify://products/huitan-wedding-band-eternity-rings-women-brilliant-round-zirconia-luxury-engagement-rings-thin-elegant-female-jewelry-drop-ship"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DiT4VK"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "slide_height": "adapt_image",
+        "desktop_image_fit": "contain",
+        "mobile_image_fit": "contain",
+        "change_slides_speed": 5,
+        "text_color": "#ffffff",
+        "enable_text_shadow": true,
+        "heading_font": "system_ui_n4",
+        "subheading_font": "system_ui_n4",
+        "button_font": "system_ui_n4",
+        "heading_size": 39,
+        "mobile_heading_size": 26,
+        "heading_weight": "700",
+        "heading_spacing": 0,
+        "mobile_heading_spacing": 0,
+        "heading_bottom": 8,
+        "mobile_heading_bottom": 6,
+        "subheading_size": 18,
+        "mobile_subheading_size": 14,
+        "subheading_weight": "400",
+        "subheading_spacing": 0,
+        "mobile_subheading_spacing": 0,
+        "button_size": 14,
+        "mobile_button_size": 12,
+        "button_weight": "700",
+        "button_spacing": 0.5,
+        "mobile_button_spacing": 0.5,
+        "button_top": 10,
+        "mobile_button_top": 8,
+        "button_underline_offset": 5,
+        "desktop_content_bottom": 30,
+        "mobile_content_bottom": 24
+      }
+    },
+    "custom_collection_list_responsive_iPHBeE": {
+      "type": "custom-collection-list-responsive",
+      "blocks": {
+        "collection_tA84NK": {
+          "type": "collection",
+          "settings": {
+            "collection": "classic-case",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        },
+        "collection_y8TqGc": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        },
+        "collection_i3cWGU": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        },
+        "collection_gzmUV9": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        },
+        "collection_VKcCk7": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-in",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        },
+        "collection_V6DMLq": {
+          "type": "collection",
+          "settings": {
+            "collection": "bestsellers",
+            "link": "",
+            "title": "",
+            "mobile_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tA84NK",
+        "collection_y8TqGc",
+        "collection_i3cWGU",
+        "collection_gzmUV9",
+        "collection_VKcCk7",
+        "collection_V6DMLq"
+      ],
+      "name": "Custom collection list",
+      "settings": {
+        "title_font": "system_ui_n4",
+        "title_letter_spacing": 0,
+        "title_transform": "none",
+        "heading": "",
+        "card_background": "#f7f7f7",
+        "title_color": "#121212",
+        "title_weight": "500",
+        "image_fit": "cover",
+        "desktop_ratio": "3 / 4",
+        "mobile_ratio": "7 / 8",
+        "desktop_gap": 16,
+        "mobile_gap": 0,
+        "desktop_title_size": 17,
+        "mobile_title_size": 13,
+        "mobile_title_top": 14,
+        "mobile_card_width": 58,
+        "mobile_side_scale": 0.8,
+        "mobile_side_opacity": 65,
+        "mobile_arrow_size": 34,
+        "mobile_arrow_side": 12,
+        "mobile_arrow_bg": "#ffffff",
+        "mobile_arrow_color": "#071743",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "custom_split_banner_eaWqkW": {
+      "type": "custom-split-banner",
+      "name": "Custom split banner",
+      "settings": {
+        "image_position": "left",
+        "eyebrow": "CÁC DỊP LỄ RƯỚC LỄ LẦN ĐẦU",
+        "heading": "CHO MỘT CỘT MỐC Ý NGHĨA",
+        "button_label": "MUA SẮM BỘ SƯU TẬP",
+        "button_link": "",
+        "background_color": "#ffffff",
+        "content_background": "#f7f7f7",
+        "text_color": "#071743",
+        "desktop_height": 960,
+        "mobile_height": 640,
+        "desktop_image_position": "center center",
+        "mobile_image_position": "center center",
+        "mobile_vertical_position": "flex-end",
+        "content_width": 520,
+        "eyebrow_size": 22,
+        "mobile_eyebrow_size": 11,
+        "eyebrow_weight": "600",
+        "eyebrow_letter_spacing": 1,
+        "eyebrow_bottom": 24,
+        "mobile_eyebrow_bottom": 6,
+        "heading_size": 30,
+        "mobile_heading_size": 12,
+        "heading_weight": "400",
+        "heading_letter_spacing": 1,
+        "button_top": 30,
+        "mobile_button_top": 12,
+        "button_width": 230,
+        "mobile_button_width": 120,
+        "button_height": 52,
+        "mobile_button_height": 28,
+        "button_size": 14,
+        "mobile_button_size": 8,
+        "button_bg": "#071743",
+        "button_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_featured_collection_hover_slider_fRXjrm": {
+      "type": "custom-featured-collection-hover-slider",
+      "name": "Featured collection hover",
+      "settings": {
+        "show_badge": false,
+        "section_width": 1900,
+        "collection": "jewelry-example-products",
+        "product_limit": 10,
+        "heading": "Best Sellers",
+        "heading_font": "serif",
+        "heading_size": 28,
+        "mobile_heading_size": 22,
+        "heading_weight": "400",
+        "heading_color": "#000000",
+        "button_label": "SHOP NOW",
+        "button_link": "",
+        "button_size": 11,
+        "mobile_button_size": 10,
+        "button_color": "#000000",
+        "image_ratio": "3/ 4",
+        "mobile_image_ratio": "1 / 1",
+        "image_fit": "cover",
+        "section_bg": "#ffffff",
+        "card_bg": "#ffffff",
+        "show_vendor": true,
+        "show_price": true,
+        "show_heart": true,
+        "show_dots": false,
+        "show_quick_add": false,
+        "quick_add_text": "Add to bag",
+        "badge_text": "Celeb Pick",
+        "badge_bg": "#ffffff",
+        "badge_color": "#ff4b2b",
+        "badge_size": 13,
+        "badge_top": 8,
+        "badge_left": 8,
+        "heart_color": "#ff6b3a",
+        "heart_size": 28,
+        "heart_top": 8,
+        "heart_right": 10,
+        "text_align": "center",
+        "vendor_size": 11,
+        "mobile_vendor_size": 10,
+        "title_size": 13,
+        "mobile_title_size": 14,
+        "title_color": "#000000",
+        "price_size": 12,
+        "mobile_price_size": 14,
+        "price_color": "#000000",
+        "info_top": 14,
+        "quick_add_height": 34,
+        "mobile_quick_add_height": 32,
+        "quick_add_size": 14,
+        "mobile_quick_add_size": 14,
+        "quick_add_bg": "#ffffff",
+        "quick_add_color": "#000000",
+        "quick_add_border": "#cccccc",
+        "product_gap": 14,
+        "mobile_product_gap": 6,
+        "side_padding": 60,
+        "mobile_side_padding": 16,
+        "header_bottom": 40,
+        "mobile_header_bottom": 24,
+        "arrow_size": 34,
+        "arrow_side": 45,
+        "arrow_bg": "#b7b0bb",
+        "arrow_color": "#ffffff",
+        "padding_top": 48,
+        "padding_bottom": 56,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "custom_banner_products_grid_7nYRQE": {
+      "type": "custom-banner-products-grid",
+      "disabled": true,
+      "name": "Banner + 4 products",
+      "settings": {
+        "collection": "jewelry-example-products",
+        "banner_title": "Custom Your Jewelry",
+        "banner_position": "left",
+        "banner_title_color": "#000000",
+        "banner_title_size": 40,
+        "mobile_banner_title_size": 28,
+        "desktop_height": 760,
+        "mobile_banner_height": 420,
+        "product_bg": "#f7f7f7",
+        "product_ratio": "1 / 1",
+        "gap": 16,
+        "product_gap": 12,
+        "mobile_gap": 14,
+        "mobile_product_gap": 6,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "custom_featured_collection_hover_slider_URzkER": {
+      "type": "custom-featured-collection-hover-slider",
+      "name": "Featured collection hover",
+      "settings": {
+        "show_badge": true,
+        "section_width": 1900,
+        "collection": "bracelets",
+        "product_limit": 10,
+        "heading": "New Arrives",
+        "heading_font": "serif",
+        "heading_size": 28,
+        "mobile_heading_size": 22,
+        "heading_weight": "400",
+        "heading_color": "#000000",
+        "button_label": "SHOP NOW",
+        "button_link": "",
+        "button_size": 11,
+        "mobile_button_size": 10,
+        "button_color": "#000000",
+        "image_ratio": "3/ 4",
+        "mobile_image_ratio": "1 / 1",
+        "image_fit": "cover",
+        "section_bg": "#ffffff",
+        "card_bg": "#ffffff",
+        "show_vendor": true,
+        "show_price": true,
+        "show_heart": false,
+        "show_dots": false,
+        "show_quick_add": false,
+        "quick_add_text": "Add to bag",
+        "badge_text": "New",
+        "badge_bg": "#cccccc",
+        "badge_color": "#ff4b2b",
+        "badge_size": 13,
+        "badge_top": 8,
+        "badge_left": 8,
+        "heart_color": "#ff6b3a",
+        "heart_size": 28,
+        "heart_top": 8,
+        "heart_right": 10,
+        "text_align": "center",
+        "vendor_size": 11,
+        "mobile_vendor_size": 10,
+        "title_size": 13,
+        "mobile_title_size": 14,
+        "title_color": "#000000",
+        "price_size": 12,
+        "mobile_price_size": 14,
+        "price_color": "#000000",
+        "info_top": 14,
+        "quick_add_height": 34,
+        "mobile_quick_add_height": 32,
+        "quick_add_size": 14,
+        "mobile_quick_add_size": 14,
+        "quick_add_bg": "#ffffff",
+        "quick_add_color": "#000000",
+        "quick_add_border": "#cccccc",
+        "product_gap": 14,
+        "mobile_product_gap": 6,
+        "side_padding": 60,
+        "mobile_side_padding": 16,
+        "header_bottom": 40,
+        "mobile_header_bottom": 24,
+        "arrow_size": 34,
+        "arrow_side": 45,
+        "arrow_bg": "#b7b0bb",
+        "arrow_color": "#ffffff",
+        "padding_top": 48,
+        "padding_bottom": 56,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "ssevice_icon_rPGBKR": {
+      "type": "ssevice-icon",
+      "blocks": {
+        "service_Nf9VXr": {
+          "type": "service",
+          "settings": {
+            "icon_text": "🚚",
+            "title": "FREE SHIPPING",
+            "text": ""
+          }
+        },
+        "service_jTphFY": {
+          "type": "service",
+          "settings": {
+            "icon_text": "⏱️",
+            "title": "FAST DELIVERY",
+            "text": ""
+          }
+        },
+        "service_Bx7nCc": {
+          "type": "service",
+          "settings": {
+            "icon_text": "📦",
+            "title": "15-DAY RETURNS",
+            "text": ""
+          }
+        },
+        "service_Ge9CNw": {
+          "type": "service",
+          "settings": {
+            "icon_text": "🎧",
+            "title": "24/7 SUPPORT",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_Nf9VXr",
+        "service_jTphFY",
+        "service_Bx7nCc",
+        "service_Ge9CNw"
+      ],
+      "disabled": true,
+      "name": "Service icons",
+      "settings": {
+        "bg_color": "#ffffff",
+        "max_width": 1500,
+        "desktop_side_spacing": 80,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 28,
+        "mobile_side_spacing": 18,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "desktop_gap": 52,
+        "mobile_row_gap": 28,
+        "mobile_column_gap": 20,
+        "desktop_align": "center",
+        "desktop_icon_gap": 18,
+        "mobile_icon_gap": 8,
+        "icon_size_desktop": 42,
+        "icon_size_mobile": 34,
+        "icon_color": "#e85f7a",
+        "title_size_desktop": 15,
+        "title_size_mobile": 12,
+        "title_weight": 800,
+        "title_letter_spacing": 0.3,
+        "title_color": "#222222",
+        "text_size_desktop": 13,
+        "text_size_mobile": 10,
+        "text_weight": 400,
+        "text_line_height": 1.5,
+        "text_top_spacing": 6,
+        "mobile_text_top_spacing": 4,
+        "text_color": "#444444"
+      }
+    },
+    "custom_info_card_slider_J4Yht6": {
+      "type": "custom-info-card-slider",
+      "blocks": {
+        "card_EfQFg3": {
+          "type": "card",
+          "settings": {
+            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
+            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+          }
+        },
+        "card_Kz6qNz": {
+          "type": "card",
+          "settings": {
+            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
+            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+          }
+        },
+        "card_8hQe4a": {
+          "type": "card",
+          "settings": {
+            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
+            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+          }
+        },
+        "card_mDpB6m": {
+          "type": "card",
+          "settings": {
+            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
+            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_EfQFg3",
+        "card_Kz6qNz",
+        "card_8hQe4a",
+        "card_mDpB6m"
+      ],
+      "name": "Custom info card slider",
+      "settings": {
+        "heading": "ONLY AT ROSY AURAS",
+        "heading_font": "system_ui_n4",
+        "card_title_font": "system_ui_n4",
+        "body_font": "system_ui_n4",
+        "section_width": 1920,
+        "desktop_columns": 4,
+        "mobile_card_width": 65,
+        "mobile_side_scale": 0.9,
+        "mobile_side_opacity": 65,
+        "image_ratio": "4 / 5",
+        "mobile_image_ratio": "4 / 5",
+        "image_fit": "cover",
+        "section_bg": "#ffffff",
+        "image_bg": "#f7f7f7",
+        "side_padding": 16,
+        "card_gap": 14,
+        "mobile_card_gap": 0,
+        "hover_zoom": 1.1,
+        "desktop_heading_padding": 34,
+        "desktop_heading_top": 12,
+        "desktop_heading_image_gap": 28,
+        "mobile_heading_padding": 15,
+        "mobile_heading_top": 8,
+        "mobile_heading_image_gap": 28,
+        "heading_size": 24,
+        "mobile_heading_size": 10,
+        "heading_weight": "400",
+        "heading_spacing": 0.5,
+        "heading_color": "#071743",
+        "text_top": 24,
+        "mobile_text_top": 12,
+        "text_align": "center",
+        "title_size": 18,
+        "mobile_title_size": 10,
+        "title_weight": "500",
+        "title_spacing": 1,
+        "title_color": "#071743",
+        "title_bottom": 12,
+        "body_size": 15,
+        "mobile_body_size": 8,
+        "body_line_height": 1.6,
+        "body_color": "#071743",
+        "arrow_size": 38,
+        "mobile_arrow_size": 28,
+        "arrow_side": 28,
+        "arrow_bg": "#ffffff",
+        "arrow_color": "#071743",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 24
+      }
+    },
+    "custom_jewelry_grid_88mRry": {
+      "type": "custom-jewelry-grid",
+      "blocks": {
+        "category_yydpqr": {
+          "type": "category",
+          "settings": {
+            "title": "Necklace",
+            "link": "shopify://products/custom-day-chuyền"
+          }
+        },
+        "category_pVtTb4": {
+          "type": "category",
+          "settings": {
+            "title": "Ring",
+            "link": ""
+          }
+        },
+        "category_9z8xPY": {
+          "type": "category",
+          "settings": {
+            "title": "Earrings",
+            "link": ""
+          }
+        },
+        "category_V8RWk7": {
+          "type": "category",
+          "settings": {
+            "title": "Bracelet",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_yydpqr",
+        "category_pVtTb4",
+        "category_9z8xPY",
+        "category_V8RWk7"
+      ],
+      "name": "Custom Jewelry Grid",
+      "settings": {
+        "full_width": true,
+        "banner_title": "Custom Your Jewelry",
+        "banner_title_font_size": 3.2,
+        "banner_title_color": "#ffffff",
+        "category_font_size": 1.4,
+        "category_title_color": "#000000",
+        "grid_gap_desktop": 0,
+        "grid_gap_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow_6PxQxi",
+    "custom_collection_list_responsive_iPHBeE",
+    "custom_split_banner_eaWqkW",
+    "custom_featured_collection_hover_slider_fRXjrm",
+    "custom_banner_products_grid_7nYRQE",
+    "custom_featured_collection_hover_slider_URzkER",
+    "ssevice_icon_rPGBKR",
+    "custom_info_card_slider_J4Yht6",
+    "custom_jewelry_grid_88mRry"
+  ]
+}
