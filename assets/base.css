@@ -3654,10 +3654,27 @@ details-disclosure > details {
     color: #ffffff !important;
   }
 
-  /* Invert logo to white when header is transparent on dark background */
-  .header-wrapper--transparent:not(:hover):not(.scrolled-past-header) .header__heading-logo {
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
+  /* Invert logo logic: use two separate images if available */
+  .header__heading-logo--transparent {
+    display: none !important;
+  }
+
+  .header-wrapper--transparent:not(:hover):not(.scrolled-past-header) .header__heading-logo--transparent {
+    display: block !important;
+  }
+
+  .header-wrapper--transparent:not(:hover):not(.scrolled-past-header) .header__heading-logo--main {
+    display: none !important;
+  }
+
+  .header-wrapper--transparent:hover .header__heading-logo--transparent,
+  .header-wrapper--transparent.scrolled-past-header .header__heading-logo--transparent {
+    display: none !important;
+  }
+
+  .header-wrapper--transparent:hover .header__heading-logo--main,
+  .header-wrapper--transparent.scrolled-past-header .header__heading-logo--main {
+    display: block !important;
   }
 
   /* Hover state: White background, Black text */
