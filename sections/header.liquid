@@ -252,8 +252,8 @@
   }
   .header {
     max-width: 100% !important;
-    padding-left: 3rem !important;
-    padding-right: 3rem !important;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
   }
 {%- endstyle -%}
 
@@ -300,7 +300,9 @@
       endif
 
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
+        unless request.page_type == 'index'
+          render 'header-search', input_id: 'Search-In-Modal-1'
+        endunless
       endif
     -%}
 
