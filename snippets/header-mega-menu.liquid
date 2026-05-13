@@ -1,0 +1,114 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li class="header__menu-item-wrapper">
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <div class="mega-menu__container page-width">
+                  <div class="mega-menu__sidebar">
+                    <div class="mega-menu__sidebar-header">
+                       <h2 class="mega-menu__sidebar-title">{{ link.title | escape }}</h2>
+                       <a href="{{ link.url }}" class="mega-menu__sidebar-all-link">Shop All {{ link.title | escape }}</a>
+                    </div>
+                    
+                    <div class="mega-menu__sidebar-footer">
+                       <ul class="list-unstyled">
+                         <li><a href="/pages/stores" class="mega-menu__sidebar-link-small">STORES</a></li>
+                         <li><a href="/pages/appointment" class="mega-menu__sidebar-link-small">BOOK AN APPOINTMENT</a></li>
+                         <li><a href="/pages/about" class="mega-menu__sidebar-link-small">ABOUT</a></li>
+                       </ul>
+                    </div>
+                  </div>
+
+                  <div class="mega-menu__columns">
+                    {%- for childlink in link.links -%}
+                      <div class="mega-menu__column">
+                        <h3 class="mega-menu__column-title">{{ childlink.title | escape }}</h3>
+                        <ul class="mega-menu__column-list list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li>
+                              <a href="{{ grandchildlink.url }}" class="mega-menu__column-link">
+                                {%- if grandchildlink.title contains ' - ' -%}
+                                  {%- assign parts = grandchildlink.title | split: ' - ' -%}
+                                  <span class="mega-menu__column-link-title">{{ parts[0] }}</span>
+                                  <span class="mega-menu__column-link-desc">{{ parts[1] }}</span>
+                                {%- else -%}
+                                  {{ grandchildlink.title | escape }}
+                                {%- endif -%}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                        
+                        {% comment %} If no grandkids, show childlink as a visual item {% endcomment %}
+                        {%- if childlink.links == blank -%}
+                           <div class="mega-menu__grid-item">
+                            <a href="{{ childlink.url }}" class="mega-menu__grid-link">
+                              <div class="mega-menu__grid-image-wrapper">
+                                {%- if childlink.type == 'collection_link' and childlink.object.featured_image -%}
+                                  {{ childlink.object.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mega-menu__grid-image' }}
+                                {%- elsif childlink.type == 'product_link' and childlink.object.featured_media -%}
+                                  {{ childlink.object.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', class: 'mega-menu__grid-image' }}
+                                {%- else -%}
+                                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                                {%- endif -%}
+                              </div>
+                              <span class="mega-menu__grid-title">{{ childlink.title | escape }}</span>
+                            </a>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

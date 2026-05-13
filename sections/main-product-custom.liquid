@@ -1,0 +1,270 @@
+{%- liquid
+  assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+-%}
+
+<product-info
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-update-url="true"
+  data-url="{{ product.url }}"
+>
+  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    .product__title h1 {
+      font-size: {{ section.settings.title_font_size }}px;
+      color: {{ section.settings.title_color }};
+    }
+
+    .product-custom-upload label {
+      font-size: {{ section.settings.label_font_size }}px !important;
+      color: {{ section.settings.label_color }} !important;
+    }
+
+    .product-custom-upload {
+      background-color: {{ section.settings.upload_bg_color }};
+      border: 2px dashed {{ section.settings.upload_border_color }} !important;
+    }
+    
+    .product-form__submit {
+      background-color: {{ section.settings.button_bg_color }} !important;
+      color: {{ section.settings.button_text_color }} !important;
+    }
+
+    /* Mockup Preview Styles */
+    .custom-preview-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: none; /* Hidden until image is uploaded */
+      border: 1px solid #eee;
+    }
+
+    .custom-preview__base {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .custom-preview__overlay {
+      position: absolute;
+      top: {{ section.settings.overlay_top }}%;
+      left: {{ section.settings.overlay_left }}%;
+      width: {{ section.settings.overlay_width }}%;
+      height: {{ section.settings.overlay_height }}%;
+      transform: translate(-50%, -50%) rotate({{ section.settings.overlay_rotate }}deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      {% if section.settings.overlay_shape == 'circle' %}
+        border-radius: 50%;
+      {% endif %}
+      pointer-events: none;
+    }
+
+    .custom-preview__overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .custom-preview__label {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: rgba(255,255,255,0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        z-index: 2;
+        color: #000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  {%- endstyle -%}
+
+  <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+  <div class="page-width">
+    <div class="product grid grid--1-col grid--2-col-tablet">
+      <div class="grid__item product__media-wrapper">
+        {% render 'product-media-gallery', variant_images: variant_images %}
+      </div>
+      <div class="product__info-wrapper grid__item">
+        <section
+          id="ProductInfo-{{ section.id }}"
+          class="product__info-container"
+        >
+          {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'text' -%}
+                <p class="product__text inline-richtext" {{ block.shopify_attributes }}>
+                  {{- block.settings.text -}}
+                </p>
+              {%- when 'title' -%}
+                <div class="product__title" {{ block.shopify_attributes }}>
+                  <h1>{{ product.title | escape }}</h1>
+                </div>
+              {%- when 'price' -%}
+                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+                </div>
+              {%- when 'description' -%}
+                {%- if product.description != blank -%}
+                  <div class="product__description rte" {{ block.shopify_attributes }}>
+                    {{ product.description }}
+                  </div>
+                {%- endif -%}
+              {%- when 'sku' -%}
+                <p class="product__sku" id="Sku-{{ section.id }}" {{ block.shopify_attributes }}>
+                  {{- product.selected_or_first_available_variant.sku -}}
+                </p>
+              {%- when 'inventory' -%}
+                <p class="product__inventory" id="Inventory-{{ section.id }}" {{ block.shopify_attributes }}>
+                   {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
+                      {{ 'products.product.inventory_in_stock' | t }} ({{ product.selected_or_first_available_variant.inventory_quantity }})
+                   {%- else -%}
+                      {{ 'products.product.inventory_out_of_stock' | t }}
+                   {%- endif -%}
+                </p>
+              {%- when 'variant_picker' -%}
+                {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+              {%- when 'quantity_selector' -%}
+                <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
+                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                    {{ 'products.product.quantity.label' | t }}
+                  </label>
+                  <quantity-input class="quantity">
+                    <button class="quantity__button" name="minus" type="button">-</button>
+                    <input class="quantity__input" type="number" name="quantity" id="Quantity-{{ section.id }}" min="1" value="1" form="{{ product_form_id }}">
+                    <button class="quantity__button" name="plus" type="button">+</button>
+                  </quantity-input>
+                </div>
+              {%- when 'custom_upload' -%}
+                {% comment %} Preview Mockup Container {% endcomment %}
+                <div id="CustomPreview-{{ section.id }}" class="custom-preview-container">
+                    <span class="custom-preview__label">Live Preview (Bản xem trước)</span>
+                    {%- if section.settings.mockup_image != blank -%}
+                        <img src="{{ section.settings.mockup_image | image_url: width: 800 }}" class="custom-preview__base" loading="lazy" width="800" height="800">
+                    {%- else -%}
+                        <div class="custom-preview__placeholder" style="background: #f0f0f0; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 2rem; text-align: center;">
+                            <p style="margin: 0; font-weight: 600;">[Admin: Hãy tải ảnh phôi sản phẩm trong Theme Editor]</p>
+                            <p style="font-size: 1.2rem; color: #666;">(Mockup image missing)</p>
+                        </div>
+                    {%- endif -%}
+                    <div class="custom-preview__overlay">
+                        <img id="PreviewImage-{{ section.id }}" src="" alt="Preview">
+                    </div>
+                </div>
+
+                {%- render 'buy-buttons-custom',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id
+                -%}
+              {%- when 'collapsible_tab' -%}
+                <details {{ block.shopify_attributes }}>
+                  <summary><h2>{{ block.settings.heading }}</h2></summary>
+                  <div class="rte">{{ block.settings.content }} {{ block.settings.page.content }}</div>
+                </details>
+              {%- when 'share' -%}
+                {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
+                {% render 'share-button', block: block, share_link: share_url %}
+            {%- endcase -%}
+          {%- endfor -%}
+        </section>
+      </div>
+    </div>
+  </div>
+</product-info>
+
+{% schema %}
+{
+  "name": "Custom Product Info",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    { "type": "@app" },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        { "type": "inline_richtext", "id": "text", "default": "Text block", "label": "Text" }
+      ]
+    },
+    { "type": "title", "name": "Title", "limit": 1 },
+    { "type": "price", "name": "Price", "limit": 1 },
+    { "type": "sku", "name": "SKU", "limit": 1 },
+    { "type": "inventory", "name": "Inventory", "limit": 1 },
+    { "type": "description", "name": "Description", "limit": 1 },
+    { "type": "variant_picker", "name": "Variant Picker", "limit": 1 },
+    { "type": "quantity_selector", "name": "Quantity Selector", "limit": 1 },
+    { "type": "custom_upload", "name": "Custom Upload & Buy", "limit": 1 },
+    {
+      "type": "collapsible_tab",
+      "name": "Collapsible Tab",
+      "settings": [
+        { "type": "text", "id": "heading", "default": "Collapsible Tab", "label": "Heading" },
+        { "type": "richtext", "id": "content", "label": "Content" },
+        { "type": "page", "id": "page", "label": "Page" }
+      ]
+    },
+    { "type": "share", "name": "Share", "limit": 1 }
+  ],
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color Scheme", "default": "scheme-1" },
+    { "type": "header", "content": "Mockup Preview Settings", "info": "Tùy chỉnh bản xem trước khi khách tải ảnh lên" },
+    { "type": "image_picker", "id": "mockup_image", "label": "Base Mockup Image", "info": "Ảnh phôi sản phẩm (ví dụ: dây chuyền trống)" },
+    { "type": "range", "id": "overlay_top", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Overlay Position Top", "default": 50 },
+    { "type": "range", "id": "overlay_left", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Overlay Position Left", "default": 50 },
+    { "type": "range", "id": "overlay_width", "min": 1, "max": 100, "step": 1, "unit": "%", "label": "Overlay Width", "default": 20 },
+    { "type": "range", "id": "overlay_height", "min": 1, "max": 100, "step": 1, "unit": "%", "label": "Overlay Height", "default": 20 },
+    { "type": "range", "id": "overlay_rotate", "min": -180, "max": 180, "step": 5, "unit": "deg", "label": "Overlay Rotation", "default": 0 },
+    { "type": "select", "id": "overlay_shape", "label": "Overlay Shape", "options": [
+        { "value": "square", "label": "Square" },
+        { "value": "circle", "label": "Circle" }
+      ], "default": "square" },
+    { "type": "header", "content": "Typography & Colors" },
+    { "type": "range", "id": "title_font_size", "min": 12, "max": 60, "step": 1, "unit": "px", "label": "Title Font Size", "default": 32 },
+    { "type": "color", "id": "title_color", "label": "Title Color", "default": "#000000" },
+    { "type": "range", "id": "label_font_size", "min": 10, "max": 30, "step": 1, "unit": "px", "label": "Label Font Size", "default": 16 },
+    { "type": "color", "id": "label_color", "label": "Label Color", "default": "#333333" },
+    { "type": "header", "content": "Upload Box Design" },
+    { "type": "color", "id": "upload_bg_color", "label": "Upload Box Background", "default": "#f9f9f9" },
+    { "type": "color", "id": "upload_border_color", "label": "Upload Box Border Color", "default": "#cccccc" },
+    { "type": "header", "content": "Button Design" },
+    { "type": "color", "id": "button_bg_color", "label": "Button Background Color", "default": "#000000" },
+    { "type": "color", "id": "button_text_color", "label": "Button Text Color", "default": "#ffffff" },
+    { "type": "header", "content": "Section Padding" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top Padding", "default": 36 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom Padding", "default": 36 }
+  ]
+}
+{% endschema %}

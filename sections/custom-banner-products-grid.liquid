@@ -1,0 +1,338 @@
+<section id="CBPG-{{ section.id }}" class="cbpg-section">
+  <div class="cbpg-wrapper">
+    <div class="cbpg-banner">
+      {% if section.settings.banner_image != blank %}
+        {{
+          section.settings.banner_image
+          | image_url: width: 1400
+          | image_tag: loading: 'lazy', class: 'cbpg-banner-img'
+        }}
+      {% endif %}
+
+      {% if section.settings.banner_title != blank %}
+        <div class="cbpg-banner-title">
+          {{ section.settings.banner_title }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="cbpg-products">
+      {% assign selected_collection = section.settings.collection %}
+
+      {% if selected_collection != blank %}
+        {% for product in selected_collection.products limit: 4 %}
+          <a href="{{ product.url }}" class="cbpg-product-card">
+            <div class="cbpg-product-img-box">
+              {% if product.featured_image != blank %}
+                {{
+                  product.featured_image
+                  | image_url: width: 700
+                  | image_tag: loading: 'lazy', class: 'cbpg-product-img'
+                }}
+              {% endif %}
+            </div>
+
+            <div class="cbpg-product-info">
+              <div class="cbpg-product-title">{{ product.title }}</div>
+              <div class="cbpg-product-price">
+                {{ product.price | money }}
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #CBPG-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ section.settings.gap }}px;
+    width: 100%;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-banner {
+    position: relative;
+    overflow: hidden;
+    min-height: {{ section.settings.desktop_height }}px;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-banner-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-banner-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8%;
+    text-align: center;
+    font-size: {{ section.settings.banner_title_size }}px;
+    font-weight: 700;
+    color: {{ section.settings.banner_title_color }};
+    letter-spacing: 0.04em;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ section.settings.product_gap }}px;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-img-box {
+    background: {{ section.settings.product_bg }};
+    aspect-ratio: {{ section.settings.product_ratio }};
+    overflow: hidden;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-card:hover .cbpg-product-img {
+    transform: scale(1.04);
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-info {
+    padding-top: 6px;
+    font-size: 12px;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-title {
+    font-weight: 500;
+  }
+
+  #CBPG-{{ section.id }} .cbpg-product-price {
+    margin-top: 3px;
+    color: #777;
+  }
+
+  @media screen and (min-width: 750px) {
+    #CBPG-{{ section.id }} .cbpg-wrapper {
+      {% if section.settings.banner_position == 'right' %}
+        grid-template-areas: "products banner";
+      {% else %}
+        grid-template-areas: "banner products";
+      {% endif %}
+    }
+
+    #CBPG-{{ section.id }} .cbpg-banner {
+      grid-area: banner;
+    }
+
+    #CBPG-{{ section.id }} .cbpg-products {
+      grid-area: products;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #CBPG-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    #CBPG-{{ section.id }} .cbpg-wrapper {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.mobile_gap }}px;
+    }
+
+    #CBPG-{{ section.id }} .cbpg-banner {
+      min-height: {{ section.settings.mobile_banner_height }}px;
+    }
+
+    #CBPG-{{ section.id }} .cbpg-products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ section.settings.mobile_product_gap }}px;
+    }
+
+    #CBPG-{{ section.id }} .cbpg-banner-title {
+      font-size: {{ section.settings.mobile_banner_title_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Banner + 4 products",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection sản phẩm"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner image"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner title",
+      "default": "The Formal Edit"
+    },
+    {
+      "type": "select",
+      "id": "banner_position",
+      "label": "Banner position desktop",
+      "default": "right",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "banner_title_color",
+      "label": "Banner title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "banner_title_size",
+      "label": "Banner title size desktop",
+      "min": 16,
+      "max": 70,
+      "step": 2,
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_banner_title_size",
+      "label": "Banner title size mobile",
+      "min": 14,
+      "max": 42,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Desktop banner height",
+      "min": 300,
+      "max": 1000,
+      "step": 20,
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "mobile_banner_height",
+      "label": "Mobile banner height",
+      "min": 240,
+      "max": 700,
+      "step": 20,
+      "default": 420
+    },
+    {
+      "type": "color",
+      "id": "product_bg",
+      "label": "Product background",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "text",
+      "id": "product_ratio",
+      "label": "Product image ratio",
+      "default": "1 / 1"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Desktop main gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "product_gap",
+      "label": "Desktop product gap",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile main gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "mobile_product_gap",
+      "label": "Mobile product gap",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom desktop",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner + 4 products"
+    }
+  ]
+}
+{% endschema %}

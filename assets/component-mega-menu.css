@@ -1,0 +1,170 @@
+.mega-menu {
+  position: static;
+}
+
+.mega-menu__content {
+  background-color: #ffffff !important;
+  left: 0 !important;
+  width: 100% !important;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 100;
+  display: block;
+}
+
+.js .mega-menu__content {
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
+  pointer-events: none;
+}
+
+.mega-menu[open] .mega-menu__content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mega-menu__container {
+  display: flex !important;
+  flex-direction: row !important;
+  min-height: 400px;
+  padding: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Sidebar Styles */
+.mega-menu__sidebar {
+  width: 300px !important;
+  min-width: 300px !important;
+  padding: 4rem 3rem !important;
+  border-right: 1px solid rgba(0,0,0,0.05);
+  background-color: #ffffff;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.mega-menu__sidebar-list {
+  margin-bottom: 4rem !important;
+}
+
+.mega-menu__sidebar-link {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 1.2rem 0 !important;
+  color: #000000 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.04) !important;
+}
+
+.mega-menu__sidebar-link:hover {
+  color: rgba(0,0,0,0.5) !important;
+}
+
+.mega-menu__sidebar-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.mega-menu__sidebar-icon svg {
+  fill: currentColor;
+}
+
+.mega-menu__sidebar-footer {
+  margin-top: auto !important;
+}
+
+.mega-menu__sidebar-link-small {
+  display: block !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #888888 !important;
+  padding: 0.5rem 0 !important;
+  text-decoration: none !important;
+}
+
+/* Grid Styles */
+.mega-menu__grid {
+  flex: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 3rem !important;
+  padding: 4rem !important;
+  background-color: #ffffff;
+}
+
+.mega-menu__grid-item {
+  text-align: center !important;
+}
+
+.mega-menu__grid-link {
+  text-decoration: none !important;
+  display: block !important;
+}
+
+.mega-menu__grid-image-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  margin-bottom: 1.5rem !important;
+  overflow: hidden !important;
+  background-color: #f9f9f9 !important;
+}
+
+.mega-menu__grid-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mega-menu__grid-link:hover .mega-menu__grid-image {
+  transform: scale(1.08) !important;
+}
+
+.mega-menu__grid-title {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #000000 !important;
+  display: block !important;
+  margin-top: 1rem !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .mega-menu__grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .mega-menu__content {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mega-menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .mega-menu__content {
+    display: none; /* Hide on mobile drawer, Dawn handles this separately */
+  }
+}

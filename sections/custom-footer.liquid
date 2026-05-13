@@ -1,0 +1,353 @@
+{% style %}
+#shopify-section-{{ section.id }} .cf-footer {
+  background: {{ section.settings.bg_color }};
+  padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+}
+
+#shopify-section-{{ section.id }} .cf-inner {
+  width: calc(100% - 40px);
+  max-width: {{ section.settings.max_width }}px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr 1fr 1.45fr;
+  gap: {{ section.settings.column_gap }}px;
+}
+
+#shopify-section-{{ section.id }} .cf-logo {
+  max-width: {{ section.settings.logo_width }}px;
+  margin-bottom: 22px;
+}
+
+#shopify-section-{{ section.id }} .cf-desc,
+#shopify-section-{{ section.id }} .cf-text,
+#shopify-section-{{ section.id }} .cf-link,
+#shopify-section-{{ section.id }} .cf-contact {
+  color: {{ section.settings.text_color }};
+  font-size: {{ section.settings.text_size }}px;
+  line-height: 1.7;
+}
+
+#shopify-section-{{ section.id }} .cf-title {
+  color: {{ section.settings.title_color }};
+  font-size: {{ section.settings.title_size }}px;
+  font-weight: 800;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+#shopify-section-{{ section.id }} .cf-link {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+#shopify-section-{{ section.id }} .cf-social {
+  display: flex;
+  gap: 18px;
+  margin-top: 24px;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} .cf-social a {
+  color: {{ section.settings.icon_color }};
+  width: {{ section.settings.icon_size }}px;
+  height: {{ section.settings.icon_size }}px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#shopify-section-{{ section.id }} .cf-social svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+#shopify-section-{{ section.id }} .cf-newsletter {
+  display: flex;
+  margin: 18px 0 20px;
+}
+
+#shopify-section-{{ section.id }} .cf-newsletter input {
+  flex: 1;
+  border: none;
+  padding: 14px 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+#shopify-section-{{ section.id }} .cf-newsletter button {
+  width: 54px;
+  border: none;
+  background: {{ section.settings.button_bg }};
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#shopify-section-{{ section.id }} .cf-bottom {
+  width: calc(100% - 40px);
+  max-width: {{ section.settings.max_width }}px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+
+#shopify-section-{{ section.id }} .cf-payments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+#shopify-section-{{ section.id }} .cf-payment-icon {
+  width: 52px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+}
+
+#shopify-section-{{ section.id }} .cf-payment-icon svg {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+#shopify-section-{{ section.id }} .cf-copy {
+  margin: 0;
+  text-align: center;
+  color: {{ section.settings.text_color }};
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 749px) {
+
+@media screen and (max-width: 749px) {
+  #shopify-section-{{ section.id }} .cf-inner > div:first-child {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    column-gap: 14px;
+    align-items: start;
+  }
+
+  #shopify-section-{{ section.id }} .cf-logo {
+    width: 90px;
+    max-width: 90px;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .cf-desc {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .cf-social {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    justify-content: flex-start;
+  }
+}
+
+  #shopify-section-{{ section.id }} .cf-footer {
+    padding: {{ section.settings.mobile_padding_top }}px 0 {{ section.settings.mobile_padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .cf-inner {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .cf-logo {
+    max-width: {{ section.settings.mobile_logo_width }}px;
+  }
+
+  #shopify-section-{{ section.id }} .cf-bottom {
+    margin-top: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .cf-payment-icon {
+    width: 46px;
+    height: 32px;
+  }
+}
+{% endstyle %}
+
+<footer class="cf-footer">
+  <div class="cf-inner">
+    <div>
+      {% if section.settings.logo != blank %}
+        <img class="cf-logo" src="{{ section.settings.logo | img_url: '300x' }}" alt="{{ shop.name }}">
+      {% else %}
+        <h2 class="cf-title">{{ shop.name }}</h2>
+      {% endif %}
+
+      <div class="cf-desc">{{ section.settings.description }}</div>
+
+      <div class="cf-social">
+  {% if section.settings.show_facebook %}
+    <a href="{{ section.settings.facebook_link }}" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.9h-2.34V22C18.34 21.25 22 17.09 22 12.07z"/></svg>
+    </a>
+  {% endif %}
+
+  {% if section.settings.show_instagram %}
+    <a href="{{ section.settings.instagram_link }}" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9A3.1 3.1 0 1 1 12 8.9a3.1 3.1 0 0 1 0 6.2zM17.1 6.7a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z"/></svg>
+    </a>
+  {% endif %}
+
+  {% if section.settings.show_tiktok %}
+    <a href="{{ section.settings.tiktok_link }}" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M16.6 5.8c1.2 1 2.3 1.5 3.7 1.6v3.1a7.8 7.8 0 0 1-3.7-.9v5.6c0 3.8-2.5 6.3-6.2 6.3A5.8 5.8 0 0 1 4.5 15.7c0-3.4 2.7-5.9 6.1-5.9.4 0 .8 0 1.1.1v3.3a3.4 3.4 0 0 0-1.1-.2 2.6 2.6 0 1 0 2.6 2.6V2h3.4c.1 1.5.7 2.8 2 3.8z"/></svg>
+    </a>
+  {% endif %}
+
+  {% if section.settings.show_youtube %}
+    <a href="{{ section.settings.youtube_link }}" aria-label="YouTube">
+      <svg viewBox="0 0 24 24"><path d="M21.6 7.2s-.2-1.7-.9-2.4c-.8-.9-1.8-.9-2.2-1C15.4 3.6 12 3.6 12 3.6s-3.4 0-6.5.2c-.4.1-1.4.1-2.2 1-.7.7-.9 2.4-.9 2.4S2.2 9.1 2.2 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.7.9 2.4c.8.9 1.9.9 2.4 1 1.7.2 6.3.2 6.3.2s3.4 0 6.5-.3c.4 0 1.4-.1 2.2-1 .7-.7.9-2.4.9-2.4s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.9 14.8V8.6l5.6 3.1-5.6 3.1z"/></svg>
+    </a>
+  {% endif %}
+</div>
+    </div>
+
+    <div>
+      <h3 class="cf-title">{{ section.settings.col_1_title }}</h3>
+      <a class="cf-link" href="{{ section.settings.col_1_link_1 }}">{{ section.settings.col_1_text_1 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_1_link_2 }}">{{ section.settings.col_1_text_2 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_1_link_3 }}">{{ section.settings.col_1_text_3 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_1_link_4 }}">{{ section.settings.col_1_text_4 }}</a>
+    </div>
+
+    <div>
+      <h3 class="cf-title">{{ section.settings.col_2_title }}</h3>
+      <a class="cf-link" href="{{ section.settings.col_2_link_1 }}">{{ section.settings.col_2_text_1 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_2_link_2 }}">{{ section.settings.col_2_text_2 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_2_link_3 }}">{{ section.settings.col_2_text_3 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_2_link_4 }}">{{ section.settings.col_2_text_4 }}</a>
+    </div>
+
+    <div>
+      <h3 class="cf-title">{{ section.settings.col_3_title }}</h3>
+      <a class="cf-link" href="{{ section.settings.col_3_link_1 }}">{{ section.settings.col_3_text_1 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_3_link_2 }}">{{ section.settings.col_3_text_2 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_3_link_3 }}">{{ section.settings.col_3_text_3 }}</a>
+      <a class="cf-link" href="{{ section.settings.col_3_link_4 }}">{{ section.settings.col_3_text_4 }}</a>
+    </div>
+
+    <div>
+      <h3 class="cf-title">{{ section.settings.newsletter_title }}</h3>
+      <div class="cf-text">{{ section.settings.newsletter_text }}</div>
+
+      {% form 'customer', class: 'cf-newsletter' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" placeholder="{{ section.settings.placeholder }}" required>
+        <button type="submit">→</button>
+      {% endform %}
+
+      <div class="cf-contact">☎ {{ section.settings.phone }}</div>
+      <div class="cf-contact">✉ {{ section.settings.email }}</div>
+    </div>
+  </div>
+
+  <div class="cf-bottom">
+    <div class="cf-payments">
+      {% assign payment_types = 'amazon_payments,american_express,apple_pay,diners_club,discover,google_pay,master,paypal,shopify_pay,visa' | split: ',' %}
+      {% for type in payment_types %}
+        <span class="cf-payment-icon">
+          {{ type | payment_type_svg_tag }}
+        </span>
+      {% endfor %}
+    </div>
+
+    <div class="cf-copy">{{ section.settings.copyright }}</div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Custom footer",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "range", "id": "logo_width", "label": "Logo width desktop", "min": 60, "max": 260, "step": 10, "default": 150 },
+    { "type": "range", "id": "mobile_logo_width", "label": "Logo width mobile", "min": 60, "max": 220, "step": 10, "default": 130 },
+
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Rosy Auras brings exquisite jewelry designs, honoring your unique beauty and style." },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2024 Rosy Auras. All rights reserved." },
+
+    { "type": "url", "id": "facebook_link", "label": "Facebook link" },
+    { "type": "url", "id": "instagram_link", "label": "Instagram link" },
+    { "type": "url", "id": "tiktok_link", "label": "TikTok link" },
+    { "type": "url", "id": "youtube_link", "label": "YouTube link" },
+    { "type": "checkbox", "id": "show_facebook", "label": "Show Facebook icon", "default": true },
+{ "type": "checkbox", "id": "show_instagram", "label": "Show Instagram icon", "default": true },
+{ "type": "checkbox", "id": "show_tiktok", "label": "Show TikTok icon", "default": true },
+{ "type": "checkbox", "id": "show_youtube", "label": "Show YouTube icon", "default": true },
+
+    { "type": "header", "content": "Column 1" },
+    { "type": "text", "id": "col_1_title", "label": "Title", "default": "ABOUT US" },
+    { "type": "text", "id": "col_1_text_1", "label": "Text 1", "default": "About Us" },
+    { "type": "url", "id": "col_1_link_1", "label": "Link 1" },
+    { "type": "text", "id": "col_1_text_2", "label": "Text 2", "default": "Collections" },
+    { "type": "url", "id": "col_1_link_2", "label": "Link 2" },
+    { "type": "text", "id": "col_1_text_3", "label": "Text 3", "default": "News" },
+    { "type": "url", "id": "col_1_link_3", "label": "Link 3" },
+    { "type": "text", "id": "col_1_text_4", "label": "Text 4", "default": "Contact" },
+    { "type": "url", "id": "col_1_link_4", "label": "Link 4" },
+
+    { "type": "header", "content": "Column 2" },
+    { "type": "text", "id": "col_2_title", "label": "Title", "default": "POLICIES" },
+    { "type": "text", "id": "col_2_text_1", "label": "Text 1", "default": "Shipping Policy" },
+    { "type": "url", "id": "col_2_link_1", "label": "Link 1" },
+    { "type": "text", "id": "col_2_text_2", "label": "Text 2", "default": "Return Policy" },
+    { "type": "url", "id": "col_2_link_2", "label": "Link 2" },
+    { "type": "text", "id": "col_2_text_3", "label": "Text 3", "default": "Warranty Policy" },
+    { "type": "url", "id": "col_2_link_3", "label": "Link 3" },
+    { "type": "text", "id": "col_2_text_4", "label": "Text 4", "default": "Terms of Service" },
+    { "type": "url", "id": "col_2_link_4", "label": "Link 4" },
+
+    { "type": "header", "content": "Column 3" },
+    { "type": "text", "id": "col_3_title", "label": "Title", "default": "CUSTOMER SUPPORT" },
+    { "type": "text", "id": "col_3_text_1", "label": "Text 1", "default": "FAQs" },
+    { "type": "url", "id": "col_3_link_1", "label": "Link 1" },
+    { "type": "text", "id": "col_3_text_2", "label": "Text 2", "default": "Shopping Guide" },
+    { "type": "url", "id": "col_3_link_2", "label": "Link 2" },
+    { "type": "text", "id": "col_3_text_3", "label": "Text 3", "default": "Payment" },
+    { "type": "url", "id": "col_3_link_3", "label": "Link 3" },
+    { "type": "text", "id": "col_3_text_4", "label": "Text 4", "default": "Support Contact" },
+    { "type": "url", "id": "col_3_link_4", "label": "Link 4" },
+
+    { "type": "header", "content": "Newsletter" },
+    { "type": "text", "id": "newsletter_title", "label": "Newsletter title", "default": "NEWSLETTER SIGNUP" },
+    { "type": "text", "id": "newsletter_text", "label": "Newsletter text", "default": "Get the latest offers from us" },
+    { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "Enter your email" },
+    { "type": "text", "id": "phone", "label": "Phone", "default": "Hotline: 0123 456 789" },
+    { "type": "text", "id": "email", "label": "Email", "default": "Email: support@lumierejewelry.com" },
+
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FFF4F4" },
+    { "type": "color", "id": "title_color", "label": "Title color", "default": "#333333" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#555555" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#333333" },
+    { "type": "color", "id": "button_bg", "label": "Button color", "default": "#E86F93" },
+    { "type": "range", "id": "max_width", "label": "Max width", "min": 1000, "max": 1800, "step": 50, "default": 1500 },
+    { "type": "range", "id": "column_gap", "label": "Column gap", "min": 20, "max": 120, "step": 5, "default": 60 },
+    { "type": "range", "id": "padding_top", "label": "Top padding desktop", "min": 0, "max": 120, "step": 4, "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding desktop", "min": 0, "max": 120, "step": 4, "default": 24 },
+    { "type": "range", "id": "mobile_padding_top", "label": "Top padding mobile", "min": 0, "max": 100, "step": 4, "default": 32 },
+    { "type": "range", "id": "mobile_padding_bottom", "label": "Bottom padding mobile", "min": 0, "max": 100, "step": 4, "default": 28 },
+    { "type": "range", "id": "title_size", "label": "Title size", "min": 10, "max": 24, "step": 1, "default": 14 },
+    { "type": "range", "id": "text_size", "label": "Text size", "min": 10, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "icon_size", "label": "Icon size", "min": 14, "max": 32, "step": 1, "default": 22 }
+  ],
+  "presets": [
+    { "name": "Custom footer" }
+  ]
+}
+{% endschema %}
+

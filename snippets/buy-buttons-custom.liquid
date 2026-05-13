@@ -1,0 +1,189 @@
+{% comment %}
+  Renders product buy-buttons with a custom design upload field, validation, real-time preview, and background removal.
+{% endcomment %}
+<div {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <product-form
+      class="product-form"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}"
+    >
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form',
+        enctype: 'multipart/form-data'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          class="product-variant-id"
+        >
+
+        <div class="product-custom-upload" style="margin-bottom: 2rem; padding: 2rem; border: 2px dashed #ccc; border-radius: 12px; transition: all 0.3s ease;">
+          <label for="CustomDesign-{{ section.id }}" class="form__label" style="display: block; margin-bottom: 1.5rem; font-weight: 600;">
+            Upload Your Design
+          </label>
+          
+          <input
+            type="file"
+            id="CustomDesign-{{ section.id }}"
+            name="properties[Custom Design]"
+            accept="image/*"
+            required
+            class="field__input custom-file-input"
+            style="padding: 1rem; width: 100%; border: 1px solid #ddd; border-radius: 6px; background: #fff;"
+            onchange="handleFileUpload(this, '{{ section.id }}')"
+          >
+
+          {% comment %} Background Removal Toggle {% endcomment %}
+          <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+             <input type="checkbox" id="RemoveBg-{{ section.id }}" onchange="handleFileUpload(document.getElementById('CustomDesign-{{ section.id }}'), '{{ section.id }}')" style="width: 2rem; height: 2rem; cursor: pointer;">
+             <label for="RemoveBg-{{ section.id }}" style="font-size: 1.4rem; cursor: pointer; color: #d0021b; font-weight: 600;">
+                Remove White Background
+             </label>
+          </div>
+
+          <div id="file-error-{{ section.id }}" style="color: #d0021b; font-size: 1.2rem; margin-top: 1rem; display: none; font-weight: 500;">
+            Vui lòng chọn ảnh trước khi thêm vào giỏ hàng! (Please select an image)
+          </div>
+          
+          <p class="caption" style="margin-top: 1rem; color: #666; font-style: italic;">
+            * Recommended: Use logos or designs on a white background for the best results.
+          </p>
+        </div>
+
+        <div class="product-form__buttons">
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false or product.selected_or_first_available_variant == null %}
+              disabled
+            {% endif %}
+            onclick="return checkFileUpload(event, '{{ section.id }}')"
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant == null -%}
+                {{ 'products.product.unavailable' | t }}
+              {%- elsif product.selected_or_first_available_variant.available == false -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                Confirm & Add to Cart
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+    </product-form>
+
+    {% comment %} Hidden canvas for image processing {% endcomment %}
+    <canvas id="CanvasProcess-{{ section.id }}" style="display: none;"></canvas>
+
+    <script>
+      function handleFileUpload(input, sectionId) {
+        const errorDiv = document.getElementById('file-error-' + sectionId);
+        const previewContainer = document.getElementById('CustomPreview-' + sectionId);
+        const previewImage = document.getElementById('PreviewImage-' + sectionId);
+        const removeBgChecked = document.getElementById('RemoveBg-' + sectionId).checked;
+        const canvas = document.getElementById('CanvasProcess-' + sectionId);
+        const ctx = canvas.getContext('2d');
+
+        if (input.files && input.files[0]) {
+          errorDiv.style.display = 'none';
+          input.style.borderColor = '#ddd';
+
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            if (removeBgChecked) {
+                // Process background removal
+                const img = new Image();
+                img.onload = function() {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+
+                    // Simple white color removal logic
+                    // Threshold: 220-255 is considered white-ish
+                    const threshold = 220; 
+
+                    for (let i = 0; i < data.length; i += 4) {
+                        const r = data[i];
+                        const g = data[i + 1];
+                        const b = data[i + 2];
+                        
+                        // If pixel is very bright (white), set alpha to 0
+                        if (r > threshold && g > threshold && b > threshold) {
+                            data[i + 3] = 0;
+                        }
+                    }
+
+                    ctx.putImageData(imageData, 0, 0);
+                    previewImage.src = canvas.toDataURL();
+                    previewContainer.style.display = 'block';
+                    previewContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                };
+                img.src = e.target.result;
+            } else {
+                // Standard preview without processing
+                previewImage.src = e.target.result;
+                previewContainer.style.display = 'block';
+                previewContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      function checkFileUpload(event, sectionId) {
+        const fileInput = document.getElementById('CustomDesign-' + sectionId);
+        const errorDiv = document.getElementById('file-error-' + sectionId);
+        const uploadBox = fileInput.closest('.product-custom-upload');
+
+        if (!fileInput.files || fileInput.files.length === 0) {
+          event.preventDefault();
+          event.stopPropagation();
+          
+          errorDiv.style.display = 'block';
+          uploadBox.style.borderColor = '#d0021b';
+          uploadBox.style.backgroundColor = 'rgba(208, 2, 27, 0.05)';
+          
+          uploadBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          return false;
+        }
+        return true;
+      }
+    </script>
+  {%- endif -%}
+</div>
