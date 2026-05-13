@@ -17,23 +17,27 @@
 
     <title>
       {%- if request.page_type == 'index' -%}
-        {{ shop.name }} - Premium Gift Store & Fashion Accessories
+        KOZOZA CASE - Premium Phone Cases & Fashion Accessories
       {%- elsif request.page_type == 'product' -%}
-        {{ product.title }} | {{ shop.name }}
+        {{ product.title }} | KOZOZA CASE
       {%- elsif request.page_type == 'collection' -%}
-        {{ collection.title }} | {{ shop.name }}
+        {{ collection.title }} | KOZOZA CASE
       {%- else -%}
-        {{ page_title }} | {{ shop.name }}
+        {{ page_title }} | KOZOZA CASE
       {%- endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
     </title>
 
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
+    {% else %}
+      <meta name="description" content="KOZOZA CASE offers premium, stylish phone cases and unique fashion accessories. High-quality protection and designs for your devices.">
     {% endif %}
 
     {% if settings.seo_keywords %}
       <meta name="keywords" content="{{ settings.seo_keywords }}">
+    {% else %}
+      <meta name="keywords" content="phone cases, KOZOZA CASE, fashion accessories, premium phone cases, unique designs">
     {% endif %}
 
     {% render 'meta-tags' %}
