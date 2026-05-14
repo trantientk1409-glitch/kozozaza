@@ -2,8 +2,8 @@
 {%- assign t = template | split: '.' | first -%}
 
 <nav class="breadcrumb page-width" role="navigation" aria-label="breadcrumbs">
-  <ol class="breadcrumb__list list-unstyled" itemscope itemtype="http://schema.org/BreadcrumbList">
-    <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  <ol class="breadcrumb__list list-unstyled" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a class="breadcrumb__link" href="/" title="Home" itemprop="item">
         <span itemprop="name">Home</span>
       </a>
@@ -11,7 +11,7 @@
     </li>
 
     {%- if t == 'page' -%}
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ page.url }}" aria-current="page" itemprop="item">
           <span itemprop="name">{{ page.title }}</span>
@@ -21,14 +21,14 @@
 
     {%- elsif t == 'product' -%}
       {%- if collection.url -%}
-        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <span class="breadcrumb__divider" aria-hidden="true">/</span>
           <a class="breadcrumb__link" href="{{ collection.url }}" itemprop="item">
             <span itemprop="name">{{ collection.title }}</span>
           </a>
           <meta itemprop="position" content="2" />
         </li>
-        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <span class="breadcrumb__divider" aria-hidden="true">/</span>
           <a class="breadcrumb__link" href="{{ product.url }}" aria-current="page" itemprop="item">
             <span itemprop="name">{{ product.title }}</span>
@@ -36,7 +36,7 @@
           <meta itemprop="position" content="3" />
         </li>
       {%- else -%}
-        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <span class="breadcrumb__divider" aria-hidden="true">/</span>
           <a class="breadcrumb__link" href="{{ product.url }}" aria-current="page" itemprop="item">
             <span itemprop="name">{{ product.title }}</span>
@@ -46,7 +46,7 @@
       {%- endif -%}
 
     {%- elsif t == 'collection' and collection.handle -%}
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ collection.url }}" aria-current="page" itemprop="item">
           <span itemprop="name">{{ collection.title }}</span>
@@ -55,7 +55,7 @@
       </li>
 
     {%- elsif t == 'blog' -%}
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ blog.url }}" aria-current="page" itemprop="item">
           <span itemprop="name">{{ blog.title }}</span>
@@ -64,14 +64,14 @@
       </li>
 
     {%- elsif t == 'article' -%}
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ blog.url }}" itemprop="item">
           <span itemprop="name">{{ blog.title }}</span>
         </a>
         <meta itemprop="position" content="2" />
       </li>
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ article.url }}" aria-current="page" itemprop="item">
           <span itemprop="name">{{ article.title }}</span>
@@ -80,7 +80,7 @@
       </li>
 
     {%- else -%}
-      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
         <a class="breadcrumb__link" href="{{ request.path }}" aria-current="page" itemprop="item">
           <span itemprop="name">{{ page_title }}</span>

@@ -34,6 +34,25 @@
     ]
   },
   {
+    "name": "SEO Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "seo_keywords",
+        "label": "SEO Keywords (Default)",
+        "default": "phone cases, iPhone cases, Samsung cases, custom phone cases, premium protection",
+        "info": "Comma-separated keywords for search engines."
+      },
+      {
+        "type": "textarea",
+        "id": "seo_description",
+        "label": "SEO Description (Default)",
+        "default": "Discover premium custom phone cases for iPhone and Samsung at KOZOZA. Stylish, high-quality protection designed for your device. Shop now for unique designs and custom cases.",
+        "info": "Fallback description for pages without a specific meta description."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {

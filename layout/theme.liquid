@@ -17,11 +17,11 @@
 
     <title>
       {%- if request.page_type == 'index' -%}
-        KOZOZA CASE - Premium Phone Cases & Fashion Accessories
+        Custom iPhone & Samsung Cases | Premium Phone Protection - KOZOZA
       {%- elsif request.page_type == 'product' -%}
-        {{ product.title }} | KOZOZA CASE
+        {{ product.title }} | Premium Case for {{ product.type | default: 'Phone' }} | KOZOZA
       {%- elsif request.page_type == 'collection' -%}
-        {{ collection.title }} | KOZOZA CASE
+        {{ collection.title }} | Stylish {{ collection.title }} & Protection | KOZOZA
       {%- else -%}
         {{ page_title }} | KOZOZA CASE
       {%- endif -%}
@@ -31,14 +31,10 @@
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% else %}
-      <meta name="description" content="KOZOZA CASE offers premium, stylish phone cases and unique fashion accessories. High-quality protection and designs for your devices.">
+      <meta name="description" content="{{ settings.seo_description | default: 'KOZOZA CASE offers premium, stylish phone cases and unique fashion accessories. High-quality protection and designs for your devices.' }}">
     {% endif %}
 
-    {% if settings.seo_keywords %}
-      <meta name="keywords" content="{{ settings.seo_keywords }}">
-    {% else %}
-      <meta name="keywords" content="phone cases, KOZOZA CASE, fashion accessories, premium phone cases, unique designs">
-    {% endif %}
+    <meta name="keywords" content="{{ settings.seo_keywords | default: 'phone cases, KOZOZA CASE, fashion accessories, premium phone cases, unique designs' }}">
 
     {% render 'meta-tags' %}
 

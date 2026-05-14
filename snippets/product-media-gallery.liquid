@@ -245,8 +245,7 @@
                   sizes: sizes,
                   widths: '54, 74, 104, 162, 208, 324, 416',
                   id: thumbnail_id,
-                  alt: featured_media.alt
-                | escape
+                  alt: featured_media.alt | default: product.title | escape
               }}
             </button>
           </li>
@@ -307,8 +306,7 @@
                     sizes: sizes,
                     widths: '54, 74, 104, 162, 208, 324, 416',
                     id: thumbnail_id,
-                    alt: media.alt
-                  | escape
+                    alt: media.alt | default: product.title | escape
                 }}
               </button>
             </li>
