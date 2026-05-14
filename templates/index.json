@@ -76,7 +76,7 @@
         "collection_y8TqGc": {
           "type": "collection",
           "settings": {
-            "collection": "bracelets",
+            "collection": "samsung-case",
             "link": "",
             "title": "",
             "mobile_title": ""
@@ -85,7 +85,7 @@
         "collection_i3cWGU": {
           "type": "collection",
           "settings": {
-            "collection": "earrings",
+            "collection": "ipad-case",
             "link": "",
             "title": "",
             "mobile_title": ""
@@ -94,7 +94,7 @@
         "collection_gzmUV9": {
           "type": "collection",
           "settings": {
-            "collection": "frontpage",
+            "collection": "accessories",
             "link": "",
             "title": "",
             "mobile_title": ""
@@ -103,7 +103,7 @@
         "collection_VKcCk7": {
           "type": "collection",
           "settings": {
-            "collection": "new-in",
+            "collection": "other-products",
             "link": "",
             "title": "",
             "mobile_title": ""
@@ -112,7 +112,7 @@
         "collection_V6DMLq": {
           "type": "collection",
           "settings": {
-            "collection": "bestsellers",
+            "collection": "best-seller",
             "link": "",
             "title": "",
             "mobile_title": ""
