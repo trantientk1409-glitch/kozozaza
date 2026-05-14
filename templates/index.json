@@ -16,10 +16,10 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/aa.png",
-            "heading": "Luxe Solitaire Ring",
-            "subheading": "Tell your brand's story through images",
+            "heading": "Premium Phone Cases",
+            "subheading": "Protection meets style with our custom designs.",
             "button_label": "Shop Now",
-            "link": "shopify://products/huitan-wedding-band-eternity-rings-women-brilliant-round-zirconia-luxury-engagement-rings-thin-elegant-female-jewelry-drop-ship"
+            "link": "shopify://collections/all"
           }
         }
       },
@@ -163,9 +163,9 @@
       "settings": {
         "image": "shopify://shop_images/banner_mobile.png",
         "image_position": "left",
-        "eyebrow": "CÁC DỊP LỄ RƯỚC LỄ LẦN ĐẦU",
-        "heading": "CHO MỘT CỘT MỐC Ý NGHĨA",
-        "button_label": "MUA SẮM BỘ SƯU TẬP",
+        "eyebrow": "PREMIUM PROTECTION",
+        "heading": "CUSTOM DESIGN CASES",
+        "button_label": "SHOP COLLECTION",
         "button_link": "",
         "background_color": "#ffffff",
         "content_background": "#f7f7f7",
@@ -208,7 +208,7 @@
       "settings": {
         "show_badge": false,
         "section_width": 1900,
-        "collection": "jewelry-example-products",
+        "collection": "all",
         "product_limit": 10,
         "heading": "Best Sellers",
         "heading_font": "serif",
@@ -281,7 +281,7 @@
       "name": "Banner + 4 products",
       "settings": {
         "collection": "jewelry-example-products",
-        "banner_title": "Custom Your Jewelry",
+        "banner_title": "Custom Your Case",
         "banner_position": "left",
         "banner_title_color": "#000000",
         "banner_title_size": 40,
@@ -457,29 +457,29 @@
         "card_EfQFg3": {
           "type": "card",
           "settings": {
-            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
-            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+            "title": "UNIQUE CUSTOM DESIGNS",
+            "text": "<p>KOZOZA CASE offers personalized protection for your lifestyle.</p>"
           }
         },
         "card_Kz6qNz": {
           "type": "card",
           "settings": {
-            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
-            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+            "title": "PREMIUM QUALITY MATERIALS",
+            "text": "<p>Durable, stylish, and built to last.</p>"
           }
         },
         "card_8hQe4a": {
           "type": "card",
           "settings": {
-            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
-            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+            "title": "GLOBAL SHIPPING",
+            "text": "<p>We deliver our custom cases worldwide with care.</p>"
           }
         },
         "card_mDpB6m": {
           "type": "card",
           "settings": {
-            "title": "MỘT SẢN PHẨM ĐỘC NHẤT VÔ NHỊ",
-            "text": "<p>Rosy Auras is a pioneering online jewelry retailer.</p>"
+            "title": "24/7 CUSTOMER SUPPORT",
+            "text": "<p>Our team is here to help you with your custom order.</p>"
           }
         }
       },
@@ -491,7 +491,7 @@
       ],
       "name": "Custom info card slider",
       "settings": {
-        "heading": "ONLY AT ROSY AURAS",
+        "heading": "ONLY AT KOZOZA CASE",
         "heading_font": "system_ui_n4",
         "card_title_font": "system_ui_n4",
         "body_font": "system_ui_n4",
@@ -550,28 +550,28 @@
         "category_yydpqr": {
           "type": "category",
           "settings": {
-            "title": "Necklace",
-            "link": "shopify://products/custom-day-chuyền"
+            "title": "iPhone Cases",
+            "link": "shopify://collections/all"
           }
         },
         "category_pVtTb4": {
           "type": "category",
           "settings": {
-            "title": "Ring",
+            "title": "Samsung Cases",
             "link": ""
           }
         },
         "category_9z8xPY": {
           "type": "category",
           "settings": {
-            "title": "Earrings",
+            "title": "Custom Cases",
             "link": ""
           }
         },
         "category_V8RWk7": {
           "type": "category",
           "settings": {
-            "title": "Bracelet",
+            "title": "Accessories",
             "link": ""
           }
         }
@@ -585,7 +585,7 @@
       "name": "Custom Jewelry Grid",
       "settings": {
         "full_width": true,
-        "banner_title": "Custom Your Jewelry",
+        "banner_title": "Custom Your Case",
         "banner_title_font_size": 3.2,
         "banner_title_color": "#ffffff",
         "category_font_size": 1.4,
