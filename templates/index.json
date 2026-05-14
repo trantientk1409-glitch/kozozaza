@@ -208,7 +208,7 @@
       "settings": {
         "show_badge": false,
         "section_width": 1900,
-        "collection": "jewelry-example-products",
+        "collection": "classic-case",
         "product_limit": 10,
         "heading": "Best Sellers",
         "heading_font": "serif",
