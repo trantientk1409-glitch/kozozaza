@@ -161,6 +161,7 @@
       "type": "custom-split-banner",
       "name": "Custom split banner",
       "settings": {
+        "image": "shopify://shop_images/banner_mobile.png",
         "image_position": "left",
         "eyebrow": "CÁC DỊP LỄ RƯỚC LỄ LẦN ĐẦU",
         "heading": "CHO MỘT CỘT MỐC Ý NGHĨA",
